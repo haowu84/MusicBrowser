@@ -1,4 +1,3 @@
-https://uci.yuja.com/V/Video?v=2217829&node=8137718&a=885575268&autoplay=1
 https://developer.spotify.com/documentation/web-api/reference/#/operations/get-current-users-profile
 https://developer.spotify.com/documentation/web-api/reference/#/operations/search
 https://developer.spotify.com/documentation/web-api/reference/#/operations/get-an-artist
