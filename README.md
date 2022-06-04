@@ -1,33 +1,40 @@
-# Angular, Node, Express #
-**The Webserver**\
-Request Data from Spotify API\
-Return Data to Frontend
+# Music Browser with Angular, Express
 
-**Home Page**\
-User Information\
-Search Interface
+## Structure
+- webserver/client_secret.json: secret information
+- webserver/tokens.json: secret information
+- webserver/routes/index.js: communicate with the Spotify API
 
-**Artist Page**\
-Artist, Genres, Top Tracks, Albums, Similar Artists
+- client/src/app/components: folder that contains 6 components: about, carousel, carousel-card, search, track-list, and thermometer
+- client/src/app/pages: folder that contains 4 components: home-page, album-page, artist-page, and track-page
+- client/src/app/services: folder that contains 1 service
+- client/src/app/data: folder that contains 6 data types
 
-**Album Page**\
-Album, Tracks
+## Setup
+- Installing Angular Command Line Interface (CLI): ```npm install -g @angular/cli```
+- Running the webserver: ```npm start```
+- Running the client: ```ng serve```
 
-**Track Page**\
-Track, Track Features
+## Summary
+### Communicate with the Webserver
+- Handle OAuth flow between the Spotify server and the webserver
+- Authenticate and authorize access
+- Refresh access token when it expires
+- Make API requests with Sportfy service and return appropriate data type for each API call
 
-# References #
-https://developer.spotify.com/documentation/web-api/reference/#/operations/get-current-users-profile
-https://developer.spotify.com/documentation/web-api/reference/#/operations/search
-https://developer.spotify.com/documentation/web-api/reference/#/operations/get-an-artist
-https://developer.spotify.com/documentation/web-api/reference/#/operations/get-an-artists-albums
-https://developer.spotify.com/documentation/web-api/reference/#/operations/get-an-artists-top-tracks
-https://developer.spotify.com/documentation/web-api/reference/#/operations/get-an-artists-related-artists
-https://developer.spotify.com/documentation/web-api/reference/#/operations/get-an-album
-https://developer.spotify.com/documentation/web-api/reference/#/operations/get-an-albums-tracks
-https://developer.spotify.com/documentation/web-api/reference/#/operations/get-track
-https://developer.spotify.com/documentation/web-api/reference/#/operations/get-several-audio-features
-https://getbootstrap.com/docs/4.0/components/carousel/
-https://getbootstrap.com/docs/4.0/content/tables/
-https://getbootstrap.com/docs/4.0/components/progress/
+### Home Page
+- View user information (name, profile picture, and profile link) upon login
+- Trigger search request (input and select/dropdown that declares data type) to Spotify API and map responses (JSON) to into an array of the appropriate resource type (object): Artist, Album, or Track
+- Display the search results in a carousel component (Bootstrap carousel) or a track-list component (Bootstrap table)
 
+### Artist Page
+- Retrieve the basic information about the artist, top tracks, albums, and similar artists
+- Display the albums/similar artists with carousel and top tracks with track-list components
+
+### Album Page
+- Retrieve the basic information about the album and tracks
+- Display the tracks with track-list component
+
+### Track Page
+- Retrieve the basic information about the track and audio features
+- Display the track's audio features with a thermometer component (Bootstrap progress bar)
